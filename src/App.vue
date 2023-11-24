@@ -6,8 +6,14 @@ import PageFooter from './components/PageFooter.vue';
 
 <template>
   <PageHeader></PageHeader>
-  <RouterView />
+  <section class="content">
+    <RouterView />
+  </section>
   <PageFooter></PageFooter>
 </template>
 
-<style scoped></style>
+<style scoped>
+.content {
+  flex: 1;
+}
+</style>
