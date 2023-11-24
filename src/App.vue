@@ -1,22 +1,13 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import NavBar from './components/NavBar.vue';
+import PageHeader from './components/PageHeader.vue';
+import PageFooter from './components/PageFooter.vue';
 </script>
 
 <template>
-  <header class="header">
-      <h1>Title of this cool page</h1>
-      <NavBar></NavBar>
-  </header>
+  <PageHeader></PageHeader>
   <RouterView />
+  <PageFooter></PageFooter>
 </template>
 
-<style scoped>
-.header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-}
-</style>
+<style scoped></style>
