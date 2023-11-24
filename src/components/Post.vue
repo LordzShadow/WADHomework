@@ -20,14 +20,13 @@
   text-align: justify;
   padding: 10px;
   margin: 10px 12px;
-  width: 100%;
-  max-width: 100%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
   background-color: var(--color-background-soft);
-  height:max-content;
+  height: max-content;
 }
 
 .post-header {
@@ -64,5 +63,4 @@
   width: 100%;
   height: 20px;
 }
-
 </style>

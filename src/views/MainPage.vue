@@ -20,7 +20,14 @@ import Post from '@/components/Post.vue';
   text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+  .posts {
+    grid-template-columns: [center] 1fr;
+  }
+}
+
 .center {
   grid-column-start: center;
+  justify-self: center;
 }
 </style>
