@@ -45,6 +45,8 @@ export default {
 }
 
 .center {
+  display: flex;
+  justify-content: center;
   grid-column-start: center;
   justify-self: center;
   width: 100%;
