@@ -1,6 +1,6 @@
 <template>
   <div class="formBox">
-    <form @submit.prevent="submitForm" action="index.html" class="form">
+    <form @submit.prevent="submitForm" class="form">
       <div class="form-body">
         <h3>Welcome to PostIt</h3>
         <a href="#">Log in</a>
@@ -31,6 +31,7 @@ export default {
   },
   methods: {
     validatePassword() {
+      // does not check for "1 uppercase character", it is already checked as the first letter
       const regex = /[A-Z](?=(.*?[a-z]){2,})(?=.*?\d)(?=.*?[_]).{7,14}$/;
 
       if (regex.test(this.password)) {
@@ -60,7 +61,7 @@ export default {
 </script>
 
 <style scoped>
-/* TODO: nice rounded borders and other CSS */
+
 .formBox {
   display: flex;
   justify-content: center;
@@ -86,11 +87,6 @@ export default {
   text-align: center;
   width: 100%;
   background-color:rgb(61, 66, 48);
-}
-
-.span {
-  display: flex;
-  justify-content: center;
 }
 
 .validation-message {
