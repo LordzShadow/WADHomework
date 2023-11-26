@@ -68,7 +68,7 @@ export default {
 }
 
 @media (prefers-color-scheme: dark) {
-  .post-icon {
+  .author .post-icon {
     filter: invert(98%) sepia(5%) saturate(70%) hue-rotate(339deg) brightness(117%) contrast(84%);
   }
 }
