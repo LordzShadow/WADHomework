@@ -5,11 +5,21 @@ import Post from '@/components/Post.vue';
 
 <template>
   <div class="posts">
-    <div v-for="n in 10" :key="n" class="center">
-      <Post></Post>
+    <div v-for="post of posts" :key="post.id" class="center">
+      <Post :post="post"></Post>
     </div>
   </div>
 </template>
+
+<script lang="ts">
+export default {
+  computed: {
+    posts() {
+      return this.$store.state.posts;
+    }
+  }
+}
+</script>
 
 <style>
 .posts {
@@ -29,5 +39,6 @@ import Post from '@/components/Post.vue';
 .center {
   grid-column-start: center;
   justify-self: center;
+  width: 100%;
 }
 </style>
