@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1>Cool page name</h1>
+    <h1>PostIt - think, post, like!</h1>
     <nav class="nav">
       <div class="nav-start">
         <div class="nav-item">
