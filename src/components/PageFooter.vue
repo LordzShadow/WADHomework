@@ -17,5 +17,6 @@
   flex-direction: column;
   background-color: var(--color-background-soft);
   min-height: 80px;
+  text-align: center;
 }
 </style>
