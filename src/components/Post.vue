@@ -67,6 +67,12 @@ export default {
   height: auto;
 }
 
+@media (prefers-color-scheme: dark) {
+  .post-icon {
+    filter: invert(98%) sepia(5%) saturate(70%) hue-rotate(339deg) brightness(117%) contrast(84%);
+  }
+}
+
 .post-image {
   max-width: 100%;
   padding-bottom: 1rem;
