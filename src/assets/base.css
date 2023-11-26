@@ -10,10 +10,12 @@
 
   --vt-c-indigo: #2c3e50;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --vt-c-button-light-1: rgba(60, 60, 60, 0.8);
+  --vt-c-button-light-2: rgba(60, 60, 60, 1);
+  --vt-c-button-light-3: rgba(60, 60, 60, 0.7);
+  --vt-c-button-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-button-dark-2: rgba(84, 84, 84, 0.48);
+  --vt-c-button-dark-3: rgba(84, 84, 84, 0.8);
 
   --vt-c-text-light-1: var(--vt-c-indigo);
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
@@ -27,8 +29,10 @@
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  --color-button: var(--vt-c-button-light-2);
+  --color-button-hover: var(--vt-c-button-light-1);
+  --color-button-active: var(--vt-c-button-light-3);
+
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
@@ -42,8 +46,9 @@
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+    --color-button: var(--vt-c-button-dark-2);
+    --color-button-hover: var(--vt-c-button-dark-1);
+    --color-button-active: var(--vt-c-button-dark-3);
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);

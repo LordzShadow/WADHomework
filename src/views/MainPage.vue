@@ -8,6 +8,9 @@ import Post from '@/components/Post.vue';
     <div v-for="post of posts" :key="post.id" class="center">
       <Post :post="post"></Post>
     </div>
+    <div class="center">
+      <button class="reset-likes" @click="resetLikes()">Reset likes</button>
+    </div>
   </div>
 </template>
 
@@ -16,6 +19,11 @@ export default {
   computed: {
     posts() {
       return this.$store.state.posts;
+    }
+  },
+  methods: {
+    resetLikes() {
+      this.$store.commit('resetLikes');
     }
   }
 }
@@ -40,5 +48,23 @@ export default {
   grid-column-start: center;
   justify-self: center;
   width: 100%;
+}
+
+.reset-likes {
+  padding: 0 12px;
+  height: 28px;
+  border-radius: 4px;
+  background-color: var(--color-button);
+  cursor: pointer;
+  color: #ffff;
+  border: none;
+}
+
+.reset-likes:hover {
+  background-color: var(--color-button-hover);
+}
+
+.reset-likes:active {
+  background-color: var(--color-button-active);
 }
 </style>
