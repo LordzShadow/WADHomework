@@ -1,5 +1,7 @@
 import MainPageVue from '@/views/MainPage.vue'
-import SignupPageVue from '@/views/SignupPage.vue'
+import ContactUsVue from '@/views/ContactUs.vue'
+import LogInVue from '@/views/LogIn.vue'
+import SignUpVue from '@/views/SignUp.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -13,7 +15,17 @@ const router = createRouter({
     {
       path: '/signup',
       name: 'signup',
-      component: SignupPageVue
+      component: SignUpVue
+    },
+    {
+      path: '/contactus',
+      name: 'contactus',
+      component: ContactUsVue
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LogInVue
     }
   ]
 })

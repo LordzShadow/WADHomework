@@ -54,7 +54,7 @@ export const AuthController = (app: Express, pool: Pool) => {
       res
         .status(200)
         .cookie("jwt", token, { maxAge: 6000000, httpOnly: true })
-        .json({ user_id: user.rows[0].id, emil: user.rows[0].email });
+        .json({ user_id: user.rows[0].id, email: user.rows[0].email });
     } catch (error: any) {
       res.status(401).json({ error: error.message });
     }

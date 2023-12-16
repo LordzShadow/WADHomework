@@ -1,19 +1,10 @@
 <template>
   <div class="post">
     <div class="post-header">
-      <div class="author">
-        <img class="post-icon" src="@/assets/images/me.png" alt="User icon" />
-        <span>{{ post.author }}</span>
-      </div>
       <span>{{ post.date }}</span>
     </div>
     <div v-if="post.body" class="post-body">
       <p>{{ post.body }}</p>
-    </div>
-    <img v-if="post.image" class="post-image" :src="post.image.url" :alt="post.image.name" />
-    <div class="post-footer">
-      <img class="post-icon" src="@/assets/images/like.png" alt="Post reaction" @click="likePost(post.id)" />
-      <span>{{ post.likes }}</span>
     </div>
   </div>
 </template>

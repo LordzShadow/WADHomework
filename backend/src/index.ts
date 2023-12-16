@@ -1,6 +1,7 @@
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import express, { Express, Request, Response } from "express";
+import cors from "cors";
 import { initDb } from "./database";
 import { AuthController } from "./routes/auth";
 import { PostsController } from "./routes/posts";
@@ -13,6 +14,7 @@ const pool = initDb();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({credentials: true, origin: "http://localhost:5173"}));
 
 PostsController(app, pool);
 AuthController(app, pool);

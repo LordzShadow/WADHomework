@@ -5,31 +5,63 @@ import Post from '@/components/Post.vue';
 
 <template>
   <div class="posts">
+    <button @click="Logout" class="logout">Logout</button>
     <div v-for="post of posts" :key="post.id" class="center">
       <Post :post="post"></Post>
     </div>
-    <div class="center">
-      <button class="reset-likes" @click="resetLikes()">Reset likes</button>
-    </div>
+    
   </div>
 </template>
 
 <script lang="ts">
 export default {
-  computed: {
-    posts() {
-      return this.$store.state.posts;
+  name: "MainPage",
+  components: {},
+  data: function() {
+    return {
+      posts: this.fetchPosts()
     }
   },
+
   methods: {
-    resetLikes() {
-      this.$store.commit('resetLikes');
+    Logout() {
+      fetch("http://localhost:3000/auth/logout", {
+        credentials: 'include',
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log("jwt removed");
+
+        this.$router.push("/login");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error");
+      });
+    },
+    fetchPosts() {
+      fetch("http://localhost:3000/posts", {
+        credentials: 'include',
+      })
+      .then((response) => {
+        if (response.status == 401 || response.status == 403) {
+          this.$router.push("/login");
+        }
+        return response.json()
+      })
+      .then((data) => this.posts = data)
+      .catch((e) => console.log(e.message))
     }
   }
 }
 </script>
 
 <style scoped>
+.logout {
+  justify-self: center;
+  grid-column-start: center;
+}
 .posts {
   width: 100%;
   display: grid;
@@ -52,21 +84,4 @@ export default {
   width: 100%;
 }
 
-.reset-likes {
-  padding: 0 12px;
-  height: 28px;
-  border-radius: 4px;
-  background-color: var(--color-button);
-  cursor: pointer;
-  color: #ffff;
-  border: none;
-}
-
-.reset-likes:hover {
-  background-color: var(--color-button-hover);
-}
-
-.reset-likes:active {
-  background-color: var(--color-button-active);
-}
 </style>

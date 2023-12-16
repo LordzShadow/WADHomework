@@ -7,7 +7,7 @@
           <RouterLink to="/" active-class="active">Main</RouterLink>
         </div>
         <div class="nav-item">
-          <RouterLink to="/signup" active-class="active">Sign Up</RouterLink>
+          <RouterLink to="/contactus" active-class="active">Contacts</RouterLink>
         </div>
       </div>
     </nav>
@@ -26,7 +26,6 @@
 }
 
 .nav {
-  margin: 0 12px;
   width: 100%;
   height: 100%;
   display: flex;
