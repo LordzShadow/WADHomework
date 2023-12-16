@@ -7,12 +7,7 @@
         <span>or</span>
         <span>Please log in</span>
         <input class="form-input" required placeholder="Email" type="email" />
-        <input
-          class="form-input"
-          required
-          placeholder="Password"
-          type="password"
-        />
+        <input class="form-input" required placeholder="Password" type="password" />
         <button class="form-submit" type="submit">Log in</button>
         <a href="#">Forgot password</a>
       </div>
