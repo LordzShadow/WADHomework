@@ -1,6 +1,6 @@
 # WAD Homework 4
 
-## Frontend in `/frontend`
+## Frontend in `frontend/`
 
 ```sh
 npm install
