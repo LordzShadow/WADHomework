@@ -52,15 +52,15 @@ export const AuthController = (app: Express, pool: Pool) => {
 
       const token = generateToken(user.rows[0]);
       res
-        .status(201)
+        .status(200)
         .cookie("jwt", token, { maxAge: 6000000, httpOnly: true })
-        .json({ user_id: user.rows[0].id });
+        .json({ user_id: user.rows[0].id, emil: user.rows[0].email });
     } catch (error: any) {
       res.status(401).json({ error: error.message });
     }
   });
 
   app.get("/auth/logout", (req, res) => {
-    res.status(202).clearCookie("jwt").json({ message: "Cookie cleared" });
+    res.status(200).clearCookie("jwt").json({ message: "Logged out" });
   });
 };

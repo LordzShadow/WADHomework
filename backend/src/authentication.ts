@@ -5,7 +5,7 @@ import { User } from "./types";
 export function generateToken(user: User) {
   if (!process.env.TOKEN_SECRET) throw new Error("TOKEN_SECRET not set");
   return sign({ email: user.email, id: user.id }, process.env.TOKEN_SECRET, {
-    expiresIn: 60 * 60,
+    expiresIn: "1h",
   });
 }
 

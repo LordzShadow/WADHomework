@@ -22,6 +22,7 @@ npm run build
 
 #### Setup:
 - `npm install`
+- start your postgres server
 - make a copy of `sample.env` as `.env` file
 - change db fields to match your postgres instance
 
