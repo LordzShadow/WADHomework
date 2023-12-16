@@ -2,6 +2,7 @@
 import dotenv from "dotenv";
 import express, { Express, Request, Response } from "express";
 import { initDb } from "./database";
+import { PostsController } from "./posts";
 
 dotenv.config();
 
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 const pool = initDb();
 
 app.use(express.json());
+PostsController(app, pool);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
