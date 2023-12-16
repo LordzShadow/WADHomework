@@ -24,17 +24,17 @@ export async function query<T extends QueryResultRow>(
 }
 
 const postsTable = `
-    CREATE TABLE IF NOT EXISTS "post" (
+    CREATE TABLE IF NOT EXISTS "posts" (
 	    "id" SERIAL PRIMARY KEY,         
 	    "body" VARCHAR(200) NOT NULL,
       "date" TIMESTAMPTZ NOT NULL DEFAULT NOW()
     );`;
 
 const usersTable = `
-    CREATE TABLE IF NOT EXISTS "user" (
-        id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-        email VARCHAR(200) NOT NULL UNIQUE,
-        password VARCHAR(200) NOT NULL 
+    CREATE TABLE IF NOT EXISTS "users" (
+        "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+        "email" VARCHAR(200) NOT NULL UNIQUE,
+        "password" VARCHAR(200) NOT NULL 
     );`;
 
 // Initialize the database with the tables,

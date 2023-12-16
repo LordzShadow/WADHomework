@@ -3,3 +3,9 @@ export interface Post {
   body: string;
   date: Date;
 }
+
+export interface User {
+  id: string;
+  email: string;
+  password: string;
+}
