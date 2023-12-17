@@ -60,7 +60,7 @@ export const AuthController = (app: Express, pool: Pool) => {
     }
   });
 
-  app.get("/auth/logout", (req, res) => {
+  app.post("/auth/logout", (req, res) => {
     res.status(200).clearCookie("jwt").json({ message: "Logged out" });
   });
 };

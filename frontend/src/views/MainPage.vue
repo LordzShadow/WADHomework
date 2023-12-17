@@ -9,7 +9,6 @@ import Post from '@/components/Post.vue';
     <div v-for="post of posts" :key="post.id" class="center">
       <Post :post="post"></Post>
     </div>
-    
   </div>
 </template>
 
@@ -17,7 +16,7 @@ import Post from '@/components/Post.vue';
 export default {
   name: "MainPage",
   components: {},
-  data: function() {
+  data: function () {
     return {
       posts: this.fetchPosts()
     }
@@ -26,32 +25,33 @@ export default {
   methods: {
     Logout() {
       fetch("http://localhost:3000/auth/logout", {
+        method: 'POST',
         credentials: 'include',
       })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        console.log("jwt removed");
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          console.log("jwt removed");
 
-        this.$router.push("/login");
-      })
-      .catch((e) => {
-        console.log(e);
-        console.log("error");
-      });
+          this.$router.push("/login");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("error");
+        });
     },
     fetchPosts() {
       fetch("http://localhost:3000/posts", {
         credentials: 'include',
       })
-      .then((response) => {
-        if (response.status == 401 || response.status == 403) {
-          this.$router.push("/login");
-        }
-        return response.json()
-      })
-      .then((data) => this.posts = data)
-      .catch((e) => console.log(e.message))
+        .then((response) => {
+          if (response.status == 401 || response.status == 403) {
+            this.$router.push("/login");
+          }
+          return response.json()
+        })
+        .then((data) => this.posts = data)
+        .catch((e) => console.log(e.message))
     }
   }
 }
@@ -62,6 +62,7 @@ export default {
   justify-self: center;
   grid-column-start: center;
 }
+
 .posts {
   width: 100%;
   display: grid;
@@ -83,5 +84,4 @@ export default {
   justify-self: center;
   width: 100%;
 }
-
 </style>
