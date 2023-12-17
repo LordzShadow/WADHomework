@@ -30,7 +30,7 @@ export const AuthController = (app: Express, pool: Pool) => {
     res
       .status(201)
       .cookie("jwt", token, { maxAge: 6000000, httpOnly: true })
-      .json(newUser);
+      .json({ id: newUser.rows[0].id, email: newUser.rows[0].email });
   });
 
   app.post("/auth/login", async (req, res) => {
@@ -60,7 +60,7 @@ export const AuthController = (app: Express, pool: Pool) => {
     }
   });
 
-  app.get("/auth/logout", (req, res) => {
+  app.post("/auth/logout", (req, res) => {
     res.status(200).clearCookie("jwt").json({ message: "Logged out" });
   });
 };

@@ -21,7 +21,7 @@ import Post from '@/components/Post.vue';
 export default {
   name: "MainPage",
   components: {},
-  data: function() {
+  data: function () {
     return {
       posts: this.fetchPosts()
     }
@@ -30,19 +30,20 @@ export default {
   methods: {
     Logout() {
       fetch("http://localhost:3000/auth/logout", {
+        method: 'POST',
         credentials: 'include',
       })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        console.log("jwt removed");
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          console.log("jwt removed");
 
-        this.$router.push("/login");
-      })
-      .catch((e) => {
-        console.log(e);
-        console.log("error");
-      });
+          this.$router.push("/login");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("error");
+        });
     },
     fetchPosts() {
       fetch("http://localhost:3000/posts", {
@@ -70,6 +71,7 @@ export default {
   grid-column-start: center;
   margin: 5px;
 }
+
 .posts {
   width: 100%;
   display: grid;
