@@ -2,6 +2,7 @@ import MainPageVue from '@/views/MainPage.vue'
 import ContactUsVue from '@/views/ContactUs.vue'
 import LogInVue from '@/views/LogIn.vue'
 import SignUpVue from '@/views/SignUp.vue'
+import AddPostVue from '@/views/AddPost.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -26,7 +27,12 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LogInVue
-    }
+    },
+    {
+      path: '/addpost',
+      name: 'addpost',
+      component: AddPostVue
+    },
   ]
 })
 
