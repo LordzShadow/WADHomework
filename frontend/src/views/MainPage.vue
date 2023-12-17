@@ -9,6 +9,10 @@ import Post from '@/components/Post.vue';
     <div v-for="post of posts" :key="post.id" class="center">
       <Post :post="post"></Post>
     </div>
+    <div class="buttons center">
+      <RouterLink to="/AddPost" active-class="active" class="logout">Add post</RouterLink>
+      <button @click="DeleteAll" class="logout">Delete all</button>
+    </div>
     
   </div>
 </template>
@@ -52,6 +56,9 @@ export default {
       })
       .then((data) => this.posts = data)
       .catch((e) => console.log(e.message))
+    },
+    DeleteAll() {
+      console.log("deleting all posts");
     }
   }
 }
@@ -61,6 +68,7 @@ export default {
 .logout {
   justify-self: center;
   grid-column-start: center;
+  margin: 5px;
 }
 .posts {
   width: 100%;
