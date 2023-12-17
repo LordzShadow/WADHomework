@@ -30,7 +30,7 @@ export const AuthController = (app: Express, pool: Pool) => {
     res
       .status(201)
       .cookie("jwt", token, { maxAge: 6000000, httpOnly: true })
-      .json(newUser);
+      .json({ id: newUser.rows[0].id, email: newUser.rows[0].email });
   });
 
   app.post("/auth/login", async (req, res) => {
