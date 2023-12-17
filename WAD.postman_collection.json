@@ -194,7 +194,7 @@
 		{
 			"name": "Logout",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"url": {
 					"raw": "localhost:8080/auth/logout",
