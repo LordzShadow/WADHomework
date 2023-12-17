@@ -14,16 +14,6 @@ import type { Post } from '@/types'
 defineProps<{ post: Post }>()
 </script>
 
-<script lang="ts">
-export default {
-  methods: {
-    likePost(postId: number) {
-      this.$store.commit('likePost', { id: postId })
-    }
-  }
-}
-</script>
-
 <style scoped>
 .post {
   text-align: justify;
