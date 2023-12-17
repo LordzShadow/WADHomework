@@ -3,6 +3,7 @@ import ContactUsVue from '@/views/ContactUs.vue'
 import LogInVue from '@/views/LogIn.vue'
 import SignUpVue from '@/views/SignUp.vue'
 import AddPostVue from '@/views/AddPost.vue'
+import UpdatePostVue from '@/views/UpdatePost.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/addpost',
       name: 'addpost',
       component: AddPostVue
+    },
+    {
+      path: '/updatepost',
+      name: 'updatepost',
+      component: UpdatePostVue
     },
   ]
 })

@@ -1,10 +1,11 @@
 <template>
     <div class="form">
-        <span style="color: black;">Add a post</span>
+        <span style="color: black;">Update/Delete a post</span>
         <label for="body">Body</label>
         <input type="body" name="body" required v-model="body">
         <div class="container">
-            <button @click="Add" class="center">Add</button>
+            <button @click="Update" class="center">Update</button>
+            <button @click="Delete" class="center">Delete</button>
         </div>
     </div>
 </template>
@@ -14,7 +15,8 @@
 import Post from '@/components/Post.vue';
 
 export default {
-    name: "AddPost",
+    name: "UpdatePost",
+
 
 data: function() {
     return {
@@ -23,20 +25,29 @@ data: function() {
 },
 methods: {
 
-    Add() {
-        const postPody = this.body;
-        if (postPody === '') return;
-        this.body = '';
-        fetch("http://localhost:3000/posts", {
-            method: "POST",
+    Delete() {
+        console.log("deleting: " + this.$route.params.id)
+        fetch("http://localhost:3000/posts/" + this.$route.params.id, {
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             },
-            mode: 'no-cors',
-            credentials: 'include',
-            body: {body: postPody}
+            credentials: 'include'
         })
-        console.log("Adding a post: " + postPody);
+    },
+
+    Update() {
+        const postBody = this.body;
+        if (postBody === '') return;
+        this.body = '';
+        fetch("http://localhost:3000/posts/" + this.$route.params.id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            credentials: 'include',
+            body: {body: postBody}
+        })
     }
 },
 }

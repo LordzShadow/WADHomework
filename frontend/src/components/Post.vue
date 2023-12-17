@@ -1,5 +1,5 @@
 <template>
-  <div class="post">
+  <div class="post" @click="clickMethod">
     <div class="post-header">
       <span>{{ post.date }}</span>
     </div>
@@ -12,6 +12,17 @@
 <script setup lang="ts">
 import type { Post } from '@/types'
 defineProps<{ post: Post }>()
+</script>
+
+<script lang="ts">
+export default {
+  methods: {
+    clickMethod() {
+      //{ name: 'UpdatePost', params: { id: this.post.id } }
+      this.$router.push("/UpdatePost");
+    }
+  }
+}
 </script>
 
 <style scoped>
